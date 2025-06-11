@@ -6,7 +6,7 @@
 ## How to Run the Project Locally
 
 1. **Clone the repository**  
-   git clone https://github.com/savannahhlyles/ui-midterm.git
+   git clone https://github.com/savannahhlyles/ui-midterm.git  
    cd ui-midterm  
 
 2. **Run the Flask server**  
