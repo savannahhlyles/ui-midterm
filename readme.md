@@ -1,4 +1,4 @@
-You must have flask installed to run this application
+You must have flask installed to run this application.
 
 Tun this code in the terminal with 
 python server.py
