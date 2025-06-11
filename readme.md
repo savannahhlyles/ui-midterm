@@ -1,7 +1,7 @@
 # Marquee Money  
 *COMS W4170 User Interface Design – Midterm Project*
 
-**Marquee Money** is a Broadway box office analytics tool that lets users explore the financial and critical performance of shows. Designed as a CRUD web application, the site helps users search by show name and view weekly grosses, average ticket prices, theater capacity percentages, and critic scores. It’s tailored for anyone interested in Broadway trends — especially entertainment journalists covering award season.
+**Marquee Money** is a Broadway box office analytics tool that lets users explore the financial and critical performance of shows. Designed as a CRUD web application, the site helps users search by show name and view weekly grosses, average ticket prices, theater capacity percentages, and critic scores.  
 
 ## How to Run the Project Locally
 
