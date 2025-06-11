@@ -1,0 +1,589 @@
+/* Import LemonMilk font */
+@font-face {
+  font-family: 'LemonMilk';
+  src: url('/static/fonts/LemonMilk.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Import TheGlorious font */
+@font-face {
+  font-family: 'TheGlorious';
+  src: url('/static/fonts/TheGlorious.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* NAV BAR */
+.navbar {
+  background-color: #3c3a35 !important;
+  height: 80px;
+}
+
+.navbar-brand {
+  color: #f3f3f3 !important;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-family: 'LemonMilk';
+  font-size: 40px;
+  margin-left: 40px;
+}
+
+.navbar-brand:hover {
+  color: #cec2f6 !important;
+}
+
+.navbar-nav .nav-link {
+  color: #f3f3f3 !important;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-family: 'TheGlorious';
+  font-size: 18px;
+  margin-left: 530px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #cec2f6 !important;
+}
+
+#search-form {
+  margin-right: 40px;
+}
+
+#search-query {
+  background-color: #f3f3f3;
+  padding: 4px 10px;
+  font-family: 'TheGlorious';
+}
+
+#search-form button {
+  margin-left: 0px;
+  background-color: #bdabf7;
+  color: #f3f3f3;
+  padding: 4px 10px;
+  border: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-family: 'TheGlorious';
+}
+
+#search-form button:hover {
+  background-color: #a596d9;
+}
+
+/* HOME PAGE */
+.title-container {
+  position: relative;
+  text-align: center;
+  max-width: 100%;
+  height: 91vh;
+  margin-left: -12px;
+}
+
+.title-container img {
+  width: 100vw;
+  height: 100%; /* Make the image take full container height */
+  object-fit: cover; /* Ensure the image covers the space without distorting */
+  margin: 0;
+  padding: 0;
+}
+
+.title-overlay {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 5px;
+  max-width: 80%;
+  width: 80%;
+}
+
+.title-overlay h1 {
+  font-family: 'LemonMilk', sans-serif;
+  color: #cec2f6;
+  font-size: 80px;
+  margin: 0;
+}
+
+.title-overlay p {
+  font-family: 'TheGlorious', sans-serif;
+  font-size: 25px;
+  color: #f3f3f3;
+  margin-top: 10px;
+}
+
+.scroll-arrow {
+  position: relative;
+  bottom: 23%;  
+  font-size: 50px;  
+  color: #cec2f6; 
+  animation: bounce 1.5s infinite;
+}
+
+/* Scroll arrow bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+html, body {
+  background-color: #dfd8c5 !important;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  background-color: transparent !important;
+  min-height: 100vh;
+}
+
+#highest-gross-header {
+  font-size: 50px;
+  font-family: 'TheGlorious', sans-serif;
+  color: #3c3a35;
+  padding: 80px;
+  text-align: center;
+}
+
+#popular-items {
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  background-color: #f3f3f3;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.061);
+}
+
+.card-title {
+  font-family: 'LemonMilk', sans-serif;
+  color: #3c3a35;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-family: 'TheGlorious', sans-serif;
+  color: #3c3a35;
+  font-size: 18px;
+  margin-bottom: 13px;
+}
+
+.card .btn {
+  background-color: #bdabf7;
+  color: #f3f3f3;
+  font-family: 'TheGlorious', sans-serif;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+}
+
+.card .btn:hover {
+  background-color: #a596d9;
+}
+
+/* VIEW ITEM STYLING */
+#view-item-container h1 {
+  font-family: 'LemonMilk', sans-serif;
+  color: #3c3a35;
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+#view-item-container p {
+  font-family: 'TheGlorious', sans-serif;
+  color: #3c3a35;
+  font-size: 30px;
+}
+
+#view-item-container img {
+  margin-top: 120px;
+  margin-left: 40px;
+  max-width: 60%;
+  height: auto;
+}
+
+#genre-header {
+  padding-top: 20px;
+}
+
+.genre-buttons {
+  padding: 0;
+  display: inline-block;
+}
+
+.genre-buttons .btn {
+  background-color: #bdabf7;
+  border: none;
+  border-radius: 4px;
+  color: #f3f3f3;
+  font-family: 'TheGlorious', sans-serif;
+  font-size: 25px;
+}
+
+.genre-buttons .btn:hover {
+  background-color: #a596d9;
+}
+
+#row1 .col:nth-child(3) {
+  margin-top: 110px;
+}
+
+.similar-shows ul {
+  padding: 0;
+  margin-bottom: 10px;
+  font-family: 'TheGlorious', sans-serif;
+  font-size: 27px;
+  margin-top: 20px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.similar-shows ul a {
+  color: #bdabf7;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.similar-shows ul:hover {
+  color: #cec2f6;
+}
+
+.similar-shows ul a:hover {
+  color: #cec2f6;
+}
+
+.weekly-gross-list ul {
+  padding: 0;
+  margin-bottom: 10px;
+  font-family: 'TheGlorious', sans-serif;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.dark-header {
+  color: #3c3a35;
+  font-family: 'TheGlorious', sans-serif;
+  font-size: 50px;
+}
+
+.light-header {
+  color: #878787;
+  font-family: 'TheGlorious', sans-serif;
+  font-size: 20px;
+  display: inline-block;
+}
+
+#row1 {
+  margin-top: 40px;
+}
+
+#row2 {
+  margin-top: 60px;
+}
+
+.perf-indicators ul {
+  padding: 0;
+  margin-bottom: 10px;
+  font-family: 'TheGlorious', sans-serif;
+  font-size: 20px;
+}
+
+.perf-indicators {
+  margin-left: 76px;
+}
+
+.grosses {
+  margin-left: 300px;
+  font-family: 'TheGlorious', sans-serif;
+  color: #3c3a35;
+  font-size: 30px;
+}
+
+.edit-button {
+  color: #878787;
+  font-family: 'TheGlorious', sans-serif;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  text-decoration: none;
+  position: absolute;
+  top: 160px; 
+  right: 100px;
+}
+
+.edit-button:hover {
+  color:#3c3a35;
+}
+
+/* ADD SHOW */
+#add-header {
+  font-size: 50px;
+  font-family: 'TheGlorious', sans-serif;
+  color: #3c3a35;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  text-align: center;
+ }
+ 
+ 
+ #add-form {
+  padding: 30px;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap; /* Allow elements to wrap */
+  gap: 40px; /* Add space between the columns */
+  justify-content: space-between;
+ }
+ 
+ 
+ /* Container for the two columns */
+ .form-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px; /* Add space between the two columns */
+ }
+ 
+ 
+ /* Column styles */
+ .form-column {
+  width: 48%; /* Each column takes up almost half of the form width */
+ }
+ 
+ 
+ /* Label styles */
+ #add-form label {
+  font-size: 20px;
+  font-family: 'TheGlorious', sans-serif;
+  color: #878787;
+  margin-bottom: 10px;
+ }
+ 
+ 
+ /* Input field styles */
+ #add-form input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #8787877c;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+ }
+ 
+ 
+ /* Button styles */
+ #add-form button {
+  padding: 12px 20px;
+  font-size: 20px;
+  background-color: #bdabf7;
+  font-family: 'TheGlorious', sans-serif;
+  color: #f3f3f3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 auto;
+ }
+ 
+ 
+ /* Button hover effect */
+ #add-form button:hover {
+  background-color: #a596d9; /* Darker green on hover */
+ }
+ 
+ 
+.see-link {
+  color:#a596d9;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.see-link:hover {
+  color:#bdabf7;
+}
+
+.alert {
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+}
+ 
+
+
+ /* SEARCH RESULTS */
+ #search-results-container h1 {
+  font-size: 35px;
+  font-family: 'TheGlorious', sans-serif;
+  color: #3c3a35;
+  padding-top: 50px;
+  text-align: center;
+ }
+ 
+ #search-results-container .lt-result {
+  color: #878787;
+  font-size: 30px;
+  font-family: 'TheGlorious', sans-serif;
+ }
+
+ #num-results {
+  font-size: 20px;
+  color: #3c3a35;
+  font-family: 'TheGlorious', sans-serif;
+  text-align: center;
+ }
+
+ #search-results-container ul {
+  list-style-type: none;
+  padding: 0;
+ }
+ 
+ #search-results-container li {
+  font-family: 'TheGlorious', sans-serif;
+  font-size: 18px;
+  color:#878787;
+ }
+
+ #search-results-container a {
+  text-decoration: underline; 
+  color: #bdabf7; 
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#search-results-container a:hover {
+  color: #cec2f6;
+ }
+ 
+ .result-title {
+  font-size: 30px;
+  color: #bdabf7;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+ }
+
+ .result-title:hover {
+  color: #cec2f6;
+ }
+
+ .result-item {
+  margin-bottom: 30px; 
+  padding-bottom: 15px; 
+}
+
+#search-results-container .highlight {
+  background-color: #cec2f6;
+  color:#3c3a35;
+  font-weight: bold;
+}
+
+
+/* ADD SHOW */
+#edit-header {
+  font-size: 50px;
+  font-family: 'TheGlorious', sans-serif;
+  color: #3c3a35;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  text-align: center;
+ }
+ 
+ 
+ #edit-form {
+  padding: 30px;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap; /* Allow elements to wrap */
+  gap: 40px; /* Add space between the columns */
+  justify-content: space-between;
+ }
+ 
+ 
+ /* Container for the two columns */
+ .form-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px; /* Add space between the two columns */
+ }
+ 
+ 
+ /* Column styles */
+ .form-column {
+  width: 48%; /* Each column takes up almost half of the form width */
+ }
+ 
+ 
+ /* Label styles */
+ #edit-form label {
+  font-size: 20px;
+  font-family: 'TheGlorious', sans-serif;
+  color: #878787;
+  margin-bottom: 10px;
+ }
+ 
+ 
+ /* Input field styles */
+ #edit-form input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #8787877c;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+ }
+ 
+ /* Button styles */
+#edit-form #submit-btn {
+  padding: 12px 20px;
+  font-size: 20px;
+  background-color: #bdabf7;
+  font-family: 'TheGlorious', sans-serif;
+  color: #f3f3f3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: -20px;
+}
+
+/* Submit button hover effect */
+#edit-form #submit-btn:hover {
+  background-color: #a596d9; /* Darker color on hover */
+}
+
+/* Discard button styles */
+#edit-form #discard-btn {
+  padding: 12px 20px;
+  font-size: 20px;
+  background-color: #bdabf700;
+  font-family: 'TheGlorious', sans-serif;
+  color: #f3f3f3;
+  border: 2px solid #bdabf7;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: -20px;
+}
+
+/* Discard button hover effect */
+#edit-form #discard-btn:hover {
+  background-color: #a596d9;
+  color: #f3f3f3;
+}
+
+/* Error message style */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block; /* Ensure it displays as a block element */
+}
+
+.input-error {
+  border: 1px solid red;
+}

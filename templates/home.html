@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="home-container">
+  <div class="title-container">
+    <img src="{{ url_for('static', filename='images/697141-3000x2001-desktop-hd-broadway-wallpaper-image.jpg') }}" alt="A bustling Broadway street lined with show marquees, including Wicked, Phantom of the Opera, and West Side Story, as yellow taxi cabs drive by.">
+    <div class="title-overlay">
+      <h1>Marquee Money</h1>
+      <p>The go-to for theater industry pros to explore <br> the success of Broadway’s top-grossing shows.</p>
+    </div>
+    <!-- FontAwesome Down Arrow -->
+    <div class="scroll-arrow">
+      <i class="fas fa-arrow-down"></i>
+    </div>
+  </div> 
+ 
+  <h1 id="highest-gross-header">Highest Grossing Shows</h1>
+  <div id="popular-items" class="row">
+  </div>
+ </div>
+ 
+ <!-- Store JSON data safely -->
+ <script id="data-json" type="application/json">
+  {{ data | tojson }}
+ </script>
+ 
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const data = JSON.parse(document.getElementById('data-json').textContent);
+    const popularItemsContainer = document.getElementById('popular-items');
+   
+    let cardsHTML = ''; 
+    data.slice(0, 3).forEach(item => {
+      cardsHTML += `
+        <div class="col-md-4">
+          <div class="card">
+            <a href="/view/${item.id}">
+              <img src="${item.image}" class="card-img-top" alt="Playbill for ${item.title}">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">${item.title}</h5>
+              <div class="card-text-container">
+                <p class="card-text">${item.summary}</p>
+                <div class="button-container">
+                  <a href="/view/${item.id}" class="btn">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+ 
+    popularItemsContainer.innerHTML = cardsHTML;
+  });
+ </script>
+ 
+{% endblock %}

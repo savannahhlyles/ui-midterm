@@ -1,0 +1,72 @@
+<!-- Savannah Lyles -->
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container" id="view-item-container">
+
+  <div class="row" id="row1">
+    <div class="col">
+      <h1>{{ item.title }}</h1>
+      <p>{{ item.summary }}</p>
+
+      <div class="row">
+          <span class="light-header" id="genre-header">Genres</span>
+          <!-- Genre Buttons for searching by genre -->
+          <div class="genre-buttons mb-4">
+            {% for genre in item.genres %}
+              <a href="{{ url_for('search', query=genre) }}" class="btn m-2">{{ genre }}</a>
+            {% endfor %}
+          </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <img src="{{ item.image }}" alt="Playbill for {{ item.title }}">
+    </div>
+
+    <div class="col">
+      <a href="{{ url_for('edit', item_id=item.id) }}" class="edit-button">Edit</a>
+      <div class="sim-shows-container">
+      <span class="dark-header">Similar Grossing Shows</span>
+      <div class="similar-shows">
+        <ul>
+            {% for show in similar_shows %}
+                <ul>
+                    <a href="{{ url_for('view', item_id=show.id) }}">{{ show.title }}</a>
+                </ul>
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+    </div>
+    
+  </div>
+
+  <div class="row" id="row2">
+
+    <div class="col">
+      <span class="dark-header">Weekly Grosses</span>
+      <div class="weekly-gross-list">
+        <ul>
+          {% for date, gross in item.weekly_grosses.items() %}
+            <ul><span class="light-header">{{ date }}:</span><span class="grosses">{{ gross }}</span></ul>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="perf-indicators">
+        <span class="dark-header">Performance Indicators</span>
+        <ul>
+        <p><span class="light-header">Avg. Ticket Price:</span><br /> {{ item.avg_ticket_price }}</p>
+        <p><span class="light-header">Avg. Capacity Reached:</span><br /> {{ item.avg_capacity }}</p>
+        <p><span class="light-header">Critics Score:</span><br /> {{ item.critics_score }}</p>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

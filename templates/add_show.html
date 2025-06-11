@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="container">
+    <h1 id="add-header">Add a New Broadway Show</h1>
+
+    <!-- Display success message if exists -->
+    {% if success_message %}
+    <div class="alert alert-success">
+      {{ success_message }}
+      <!-- Corrected the URL for 'view' with the show_id -->
+      <a href="{{ url_for('view', item_id=new_show_id) }}" class="see-link">See it here.</a>
+    </div>
+    {% endif %}
+
+    <form id="add-form">
+      <div class="form-columns">
+        <div class="col">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" required>
+      
+          <label for="image">Image URL</label>
+          <input type="text" id="image" name="image" required>
+      
+          <label for="summary">Summary</label>
+          <input id="summary" name="summary" required></input>
+
+          <label for="genres">Genres (comma-separated)</label>
+          <input type="text" id="genres" name="genres" required>
+        </div>
+        <div class="col">
+          <label for="avg_ticket_price">Avg Ticket Price</label>
+          <input type="text" id="avg_ticket_price" name="avg_ticket_price" placeholder="e.g., $100" required>
+
+          <label for="avg_capacity">Average Capacity</label>
+          <input type="text" id="avg_capacity" name="avg_capacity" placeholder="e.g., 80%" required>
+      
+          <label for="critics_score">Critics Score</label>
+          <input type="text" id="critics_score" name="critics_score" placeholder="e.g., 9.5/10" required>
+
+          <label for="weekly_grosses">Weekly Grosses (comma-separated)</label>
+          <input type="text" id="weekly_grosses" name="weekly_grosses" placeholder='e.g., "2023-12-01": "$100,000"' required>
+        </div>
+      </div>
+
+      <button type="submit" id="submit-btn">Submit</button>
+    </form>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          if (document.querySelector(".alert-success")) {
+              document.getElementById("title").focus();
+          }
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{{ url_for('static', filename='add.js') }}"></script>
+{% endblock %} 

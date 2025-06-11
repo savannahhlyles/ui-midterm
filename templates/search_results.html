@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container" id="search-results-container">
+  <h1><span class="lt-result">Showing Results for</span> "{{ query }}"</h1>
+
+  {% if no_results_message %}
+    <p id="num-results">{{ no_results_message }}</p>
+  {% else %}
+    <p id="num-results">{{ results|length }} result(s) found.</p>
+    <ul class="results-list">
+      {% for result in results %}
+        <li class="result-item">
+          <a href="/view/{{ result.id }}">
+            <!-- Display title normally without highlight -->
+            <span class="result-title">{{ result.title }}</span>
+          </a>
+          <p>
+            <!-- Display summary with highlighted text -->
+            <span>{{ result.summary|safe }}</span>
+          </p>
+          <p>Genres: <span>{{ result.genres|join(", ")|safe }}</span></p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+{% endblock %}

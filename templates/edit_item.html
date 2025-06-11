@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h1 id="edit-header">Edit Show</h1>
+    <form action="{{ url_for('edit', item_id=item.id) }}" method="POST" id="edit-form">
+        <div class="form-columns">
+            <div class="col">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" value="{{ item.title }}" required>
+            
+                <label for="image">Image URL</label>
+                <input type="text" id="image" name="image" value="{{ item.image }}" required>
+            
+                <label for="summary">Summary</label>
+                <input type="text" id="summary" name="summary" value="{{ item.summary }}" required>
+
+                <label for="genres">Genres<br />(comma-separated)</label>
+                <input type="text" id="genres" name="genres" value="{{ ', '.join(item.genres) }}" required>
+            </div>
+            <div class="col">
+                <label for="avg_ticket_price">Avg Ticket Price</label>
+                <input type="text" id="avg_ticket_price" name="avg_ticket_price" value="{{ item.avg_ticket_price }}" required>
+
+                <label for="avg_capacity">Average Capacity</label>
+                <input type="text" id="avg_capacity" name="avg_capacity" value="{{ item.avg_capacity }}" required>
+            
+                <label for="critics_score">Critics Score</label>
+                <input type="text" id="critics_score" name="critics_score" value="{{ item.critics_score }}" required>
+
+                <label for="weekly_grosses">Weekly Grosses<br />("YYYY-MM-DD: $amount", ...)</label>
+                <input type="text" id="weekly_grosses" name="weekly_grosses" value="{{ weekly_grosses_str }}" required>
+            </div>
+        </div>
+
+        <button type="button" id="discard-btn">Discard</button>
+        <button type="submit" name="submit" id="submit-btn">Submit</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('discard-btn').addEventListener('click', function() {
+        if (confirm("Are you sure you want to discard your changes?")) {
+            window.location.href = "{{ url_for('view', item_id=item.id) }}";
+        }
+    });
+</script>
+{% endblock %}
